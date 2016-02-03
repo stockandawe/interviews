@@ -12,12 +12,15 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap-sprockets
+//= require jquery.ui.datepicker
+//= require jquery.validate
+//= require search
 //
 //= require globals
+//= require end
 
 // Initialize app
-$(function() {
-  var initializeApp = require('./main');
-  initializeApp();
-});
+// $(function() {
+//   var initializeApp = require('./main');
+//   initializeApp();
+// });

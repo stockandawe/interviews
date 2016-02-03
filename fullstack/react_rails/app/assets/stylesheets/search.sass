@@ -1,0 +1,224 @@
+@import 'rounded_corners'
+
+// Colors and variables
+$veryDarkGray:   rgb(45, 47, 47)
+$darkGray:       rgb(57, 60, 61)
+$gray:           rgb(86, 89, 90)
+$mediumGray:     rgb(116, 120, 122)
+$anotherGray:    rgb(149, 149, 149)
+$lightGray:      rgb(175, 175, 175)
+$veryLightGray:  rgb(232, 232, 232)
+$borderGray:     rgb(195, 195, 195)
+$superLightGray: rgb(245, 245, 245)
+$pink:           rgb(234, 28, 135)
+$darkPink:       rgb(204, 13, 112)
+$blue:           rgb(29, 149, 203)
+$basePadding:    10px
+$sansFontFamily: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
+
+body
+  font-family: $sansFontFamily
+  padding: $basePadding*2
+  color: $darkGray
+
+button, input, select
+  font-family: $sansFontFamily
+
+a
+  color: $blue
+  text-decoration: none
+
+  &:hover
+    color: lighten($blue, 15%)
+
+#search
+  width: 1016px
+  margin: 0 auto
+
+  #search-form
+    overflow: auto
+    @include linear-gradient(to bottom, lighten($gray, 5%), $darkGray)
+    @include round_top_corners(10px)
+    border: 1px solid $veryDarkGray
+
+    input, select
+      box-shadow: 0 1px 0 $gray
+      @include round-corners(4px)
+      border: 1px solid $veryDarkGray
+      box-shadow: inset 1px 1px 5px $gray
+      font-family: $sansFontFamily
+
+    div.error
+      position: absolute
+      right: 0
+      top: 0
+      padding: 5px
+      border: 1px solid $gray
+      @include round-corners(4px)
+      color: $darkGray
+      font-size: 12px
+      background-color: transparentize($veryLightGray, 0.4)
+
+    #search-form_main_inputs, #search-form_additional_inputs
+      height: 42px
+
+    #search-form_main_inputs
+      overflow: auto
+      float: left
+      width: 740px
+      padding: $basePadding
+      border: 1px solid $mediumGray
+      border-right: 1px solid $veryDarkGray
+
+      #search-form_location
+        position: relative
+        float: left
+
+        input
+          width: 601px
+          height: 40px
+          @include round_right_corners(0)
+          font-size: 22px
+          line-height: 22px
+          border-right: 0
+          padding: 0 $basePadding
+
+      #search-form_submit
+        float: left
+        width: 118px
+        height: 42px
+        padding: 0
+        font-size: 16px
+        line-height: 42px
+        color: white
+        text-shadow: 0 -1px 0 darken($darkPink, 30%)
+        border: 1px solid $darkGray
+        @include round_right_corners(4px)
+        @include linear-gradient(to bottom, $pink, $darkPink)
+        cursor: pointer
+
+    #search-form_additional_inputs
+      width: 230px
+      float: right
+      padding: $basePadding
+      border: 1px solid $mediumGray
+
+      .search-form_input
+        float: left
+        position: relative
+        top: -7px
+
+        label
+          color: $lightGray
+          text-shadow: 0 -1px 0 $veryDarkGray
+          font-weight: bold
+          font-size: 12px
+          margin-bottom: 5px
+
+        input, select
+          -webkit-appearance: none
+          margin-top: 5px
+          height: 20px
+
+        &.date
+          position: relative
+          width: 73px
+          margin-right: $basePadding
+
+          input
+            width: 63px
+            padding-left: $basePadding/2
+            font-weight: bold
+
+        &.guests
+          width: 47px
+
+          select
+            height: 24px
+            width: 47px
+            padding: 0 5px
+
+  #search-results_number
+    @include linear-gradient(to bottom, $superLightGray, $veryLightGray)
+    padding: $basePadding
+    color: $anotherGray
+    text-align: right
+    border: 1px solid $borderGray
+    border-top: none
+    font-size: 12px
+    font-weight: bold
+    text-shadow: 0 1px 0 white
+
+  #search-results_list
+    .search-results_item
+      overflow: auto
+      border: 1px solid $borderGray
+      border-top: none
+      padding: $basePadding*2 $basePadding
+
+      .search-results_item__picture
+        position: relative
+        float: left
+        padding: 3px
+        box-shadow: 0 1px 3px $gray
+        margin-right: $basePadding
+
+        img
+          height: 80px
+
+        .index
+          position: absolute
+          top: 3px
+          left: 3px
+          width: 15px
+          height: 15px
+          text-align: center
+          color: white
+          font-size: 11px
+          line-height: 16px
+          border-right: 1px solid $mediumGray
+          border-bottom: 1px solid $mediumGray
+          box-shadow: 1px 1px 1px $veryDarkGray
+          background-color: transparentize($darkGray, 0.2)
+
+      .search-results_item__description
+        float: left
+
+        .name
+          h2
+            font-size: 22px
+            line-height: 1em
+            font-weight: normal
+            margin: 0
+
+        p.location
+          color: $lightGray
+          font-size: 12px
+          margin: $basePadding/2 0
+
+      .search-results_item__price
+        float: right
+        text-align: right
+
+        h3
+          margin: 0
+          font-weight: normal
+
+          .symbol
+            position: relative
+            bottom: 8px
+            font-size: 18px
+            line-height: 18px
+            margin-bottom: 16px
+          .price
+            font-size: 30px
+            line-height: 1em
+
+        .price_detail
+          color: $lightGray
+          font-size: 11px
+          line-height: 15px
+
+
+#search-item-template
+  display: none

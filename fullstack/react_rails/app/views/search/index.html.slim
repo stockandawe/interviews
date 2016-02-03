@@ -1,0 +1,24 @@
+#search
+  form#search-form(method='get')
+    #search-form_main_inputs
+      #search-form_location
+        input(name='location' type='text' required)
+      button#search-form_submit(type='submit')
+        | Search
+
+    #search-form_additional_inputs
+      .search-form_input.date
+        label Check in
+        input#search-form_checkin.datepicker(type="text" name='checkin')
+      .search-form_input.date
+        label Check out
+        input#search-form_checkout.datepicker(type="text" name='checkout')
+      .search-form_input.guests
+        label Guests
+        = select_tag 'guests', options_for_select(1..16)
+
+  #search-results_number
+
+  #search-results_list
+
+= render 'search_item_template'
