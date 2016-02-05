@@ -1,12 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import globals from 'globals';
 import ExampleReactComponent from 'components/example_react_component' ;
 
 module.exports = function () {
-  // register globally available components
+  // register components
   MAIN.react.registerComponent('ExampleReactComponent', ExampleReactComponent);
-  MAIN.react.registerComponent('NaturalLanguageForm', NaturalLanguageForm);
 
   // load react components from DOM
   findReactNodes().each((i, elem) => {

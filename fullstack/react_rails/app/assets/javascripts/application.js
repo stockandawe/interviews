@@ -20,7 +20,7 @@
 //= require end
 
 // Initialize app
-// $(function() {
-//   var initializeApp = require('./main');
-//   initializeApp();
-// });
+$(function() {
+  var initializeApp = require('./main');
+  initializeApp();
+});

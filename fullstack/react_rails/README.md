@@ -1,33 +1,25 @@
-React on Ruby on Rails
+Resolutions
 ===
+
+Ruby on Rails
+---
 
 This application requires:
 
 - Ruby 2.2.3
 - Rails 4.2.4
 
-Learn more about [Installing Rails](http://railsapps.github.io/installing-rails.html).
-
 Getting Started
 ---
+
 ```
 bundle
+bundle exec rake db:migrate
 npm install
-npm install -g karma-cli
-```
-
-Add some seed data
----
-```
-rake db:seed
 ```
 
 Running tests
 ---
-__Ruby__:
-```
-rake
-```
 
 __Javascript__:
 
