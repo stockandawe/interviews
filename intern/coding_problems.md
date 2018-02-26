@@ -17,3 +17,10 @@ Write function that translates a text to Pig Latin and back. English is translat
 ### Digits in a Number
 Write a function that takes a number and returns a list of its digits (without converting the original number to a string).
 
+### Sudoku Checker
+You’re given a solution to a Sudoku puzzle. Write the code to check if it’s a valid solution.
+For those unfamiliar with Sudoku as well as the scope:
+- Grid size is 9x9, divided into 9 regions of 3x3
+- Each row must contain all digits from 1-9
+- Each column must contain all digits from 1-9
+- Each 3x3 square must contain all digits from 1-9
