@@ -72,3 +72,15 @@ def make_car
    car.move_to_showroom!
 end
 ```
+
+#### What is the difference between strings and symbols?
+
+What would be the output of the following?
+```
+"asfd".object_id == "asfd".object_id
+```
+and
+```
+:asfd.object_id == :asfd.object_id
+```
+
