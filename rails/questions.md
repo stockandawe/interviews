@@ -32,3 +32,9 @@ class CommentsController < ApplicationController
   end
 end
 ```
+
+### Why use symbols in the following code in a controller?
+
+```
+after_create :set_demo_defaults, if: :demo?
+```
