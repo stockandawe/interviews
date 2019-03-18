@@ -1,3 +1,14 @@
+### Theme: Refactor Exercise
+
+Hints/Suggestions:
+
+* avoid use of attr_accessible.
+* skinny controller fat model
+* create a spec test for the model.
+* use scopes.
+* if you plan to use a gem for any utilities, indicate that in a comment.
+
+```ruby
 # Controller
 
 class People < ActionController::Base
@@ -68,13 +79,13 @@ class Emails < ActionMailer::Base
 		@person = person
 		mail to: @person, from: 'foo@example.com'
 	end
-	
+
 	def admin_user_validated(admins, user)
 		@admins = admins.collect {|a| a.email } rescue []
 		@user = user
 		mail to: @admins, from: 'foo@example.com'
 	end
-	
+
 	def admin_new_user(admins, user)
 		@admins = admins.collect {|a| a.email } rescue []
 		@user = user
@@ -93,7 +104,7 @@ end
 # Rake Task
 
 namespace :accounts do
-	
+
 	desc "Remove accounts where the email was never validated and it is over 30 days old"
 	task :remove_unvalidated do
 		@people = Person.where('created_at < ?', Time.now - 30.days).where(:validated => false)
@@ -103,5 +114,6 @@ namespace :accounts do
 		end
 		Emails.admin_removing_unvalidated_users(Person.where(:admin => true), @people).deliver
 	end
-	
+
 end
+```

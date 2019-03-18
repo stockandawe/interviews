@@ -1,4 +1,4 @@
-Source: https://drivy.engineering/code_simplicity_command_pattern
+### Theme: https://drivy.engineering/code_simplicity_command_pattern
 
 ```ruby
 class OrdersController < ApplicationController
